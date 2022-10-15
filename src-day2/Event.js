@@ -6,7 +6,7 @@ export default class Event extends Component {
       return (
       <div>
         <h1>Event</h1>
-        <button onClick={function(){alert('Hi')}}></button>
+        <button onClick={function(){alert('Hi')}}>버튼</button>
       </div>
     );
 
