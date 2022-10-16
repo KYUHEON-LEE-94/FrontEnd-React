@@ -1,0 +1,40 @@
+.App {
+  width: 100%;
+  max-width: 640px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+body {
+  color: white;
+  background-color: #191f2c;
+
+}
+
+.Board {
+  display: inline-block;
+  padding: 35px 30px;
+  background-color: #272b38;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.App .App-Boards {
+  margin-top: 27px;
+}
+
+.App .App-Board {
+  width: 30%;
+  margin: 10px;
+}
+
+.App-Button {
+  margin: 10px;
+}
+
+.Board .Board-heading {
+  margin: 45px auto 15px;
+  color: #888d9d;
+  font-weight: 400;
+  font-size: 18px;
+}
