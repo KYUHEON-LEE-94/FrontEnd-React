@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{text-align: center;}
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .number{
+        width: 1000px;
+        margin: auto;
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .number li{
+        width: 20%;
+        list-style: none;
+        text-align: center;
+        padding: 15px 10px;
+        border: 1px solid #000;
+    }
+    .number li.on{
+        background-color: royalblue;
+        color: white;
+    }
+    button{
+        padding: 10px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <div class="box">
+        <ul class="number">
+            <li>23</li>
+            <li>43</li>
+            <li>22</li>
+            <li>68</li>
+            <li>34</li>
+            <li>67</li>
+            <li>45</li>
+            <li>89</li>
+            <li>45</li>
+        </ul>
+    </div>
+    <button>짝수</button>
+    <button>홀수</button>
+</body>
+</html>
