@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,34 +8,42 @@
     <title>Document</title>
 </head>
 <style>
-    .box{text-align: center;}
-    *{
+    .box {
+        text-align: center;
+    }
+
+    * {
         margin: 0;
         padding: 0;
     }
-    .number{
+
+    .number {
         width: 1000px;
         margin: auto;
         display: flex;
         gap: 10px;
         flex-wrap: wrap;
     }
-    .number li{
+
+    .number li {
         width: 20%;
         list-style: none;
         text-align: center;
         padding: 15px 10px;
         border: 1px solid #000;
     }
-    .number li.on{
+
+    .number li.on {
         background-color: royalblue;
         color: white;
     }
-    button{
+
+    button {
         padding: 10px;
         cursor: pointer;
     }
 </style>
+
 <body>
     <div class="box">
         <ul class="number">
@@ -46,10 +55,79 @@
             <li>67</li>
             <li>45</li>
             <li>89</li>
-            <li>45</li>
+            <li>20</li>
+            <li>56</li>
+            <li>73</li>
+            <li>93</li>
         </ul>
     </div>
-    <button>짝수</button>
-    <button>홀수</button>
+    <button id="even">짝수</button>
+    <button id="odd">홀수</button>
 </body>
+<script>
+    let liElems = document.querySelectorAll('.number li');
+    let numbers = []
+    let liElsNumer = []
+    liElems.forEach(li => liElsNumer.push(li));
+    liElems.forEach(li => numbers.push(Number(li.innerHTML)));
+
+
+    let evenbtn = document.querySelector('#even')
+    let oddbtn = document.querySelector('#odd')
+
+    function clickfunction(btn) {
+        if (btn == evenbtn) {
+            evenbtnClick(btn)
+        } else {
+            oddbtnClick(btn)
+        }
+
+    }
+
+
+    function evenbtnClick(btn) {
+        btn.addEventListener('click', function () {
+            numbers.forEach((li, idx) => {
+                if (li % 2 == 0) {
+                    liElsNumershow(idx)
+                }
+                if (li % 2 != 0) {
+                    liElsNumerhind(idx)
+                }
+            })
+        })
+    }
+
+    function oddbtnClick(btn) {
+        btn.addEventListener('click', function () {
+            numbers.forEach((li, idx) => {
+
+                if (li % 2 != 0) {
+                    liElsNumershow(idx)
+
+                }
+                if (li % 2 == 0) {
+                    liElsNumerhind(idx)
+                }
+            })
+        })
+    }
+
+    function liElsNumershow(idx) {
+        liElsNumer[idx].style.display = 'block'
+        liElsNumer[idx].classList.add('on')
+    }
+    function liElsNumerhind(idx) {
+        liElsNumer[idx].style.display = 'none'
+        liElsNumer[idx].classList.remove('on')
+    }
+
+    clickfunction(evenbtn)
+    clickfunction(oddbtn)
+
+
+
+
+</script>
+
 </html>
