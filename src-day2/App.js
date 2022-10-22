@@ -24,7 +24,7 @@ if(mode == 'Home'){
   )
 }else if(mode == "Page"){
 let filterList =  datas.filter((list)=>{return list.id == selectedId})
-  console.log(filterList);
+  
 }
 
   
