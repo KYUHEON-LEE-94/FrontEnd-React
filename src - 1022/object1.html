@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const deepObject = {
+        state: {
+          information: {
+            name: 'velopert',
+            languages: ['korean', 'english', 'chinese']
+          }
+        },
+        value: 5
+      };
+      
+      const {
+        state: {
+          information: { name, languages }
+        },
+        value
+      } = deepObject;
+      
+      const extracted = {
+        name,
+        languages,
+        value
+      };
+      //구조 분해 할당을 하게 되면 전역 변수 느낌(?)으로 각 변수에 값이 할당된다.
+      // name= 'velopert',languages= ['korean', 'english', 'chinese'], state= {
+      //    information: {
+      //      name: 'velopert',
+      //      languages: ['korean', 'english', 'chinese']
+      //    }  --> 이런식으로 변수에 할당되어버림
+      
+      console.log(extracted);
+</script>
+</html>
