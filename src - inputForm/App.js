@@ -1,6 +1,11 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState,useMemo } from 'react';
 import UserList from './UserList';
 import CreateUser from './CreateUser';
+
+function countActiveUsers(users) {
+  console.log('활성 사용자 수를 세는중...');
+  return users.filter(user => user.active).length;
+}
 
 function App() {
   const [inputs, setInputs] = useState({
@@ -58,18 +63,19 @@ function App() {
     });
     //다음의 id를 위해서 값 증가
     nextId.current += 1;
-  };
+  };//
 
   const onRemove = id => {
     //전달받는 id이 외의 값은 리턴받아서 남긴다.
     setUsers(users.filter(user => user.id !== id))
-  }
+  }//
 
   const onToggle = id => {
     setUsers(users.map(user =>
       //입력받은  id가 user.id와 같다면 user.active를 반전시키고, 그게 아니면 user그대로 
       user.id === id ? { ...user, active: !user.active } : user))
-  }
+  };
+  const count = useMemo(() =>countActiveUsers(users),[users]);
   return (
     <>
       <CreateUser
@@ -79,6 +85,7 @@ function App() {
         onCreate={onCreate}
       />
       <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
+      <div>활성사용자 수 : {count}</div>
     </>
   );
 }

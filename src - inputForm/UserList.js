@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 function User({ user, onRemove, onToggle }) {
+    useEffect(() => {
+        console.log('user 값이 설정됨: '+user);
+        console.log(user);
+        return () => {
+          console.log('user 가 바뀌기 전..');
+          console.log(user);
+        };
+      }, [user]);
     return (
         <div>
             <b style={{ cursor: 'pointer', color: user.active ? 'green' : 'black' }} onClick={() => onToggle(user.id)}>
@@ -26,4 +34,4 @@ function UserList({ users, onRemove, onToggle }) {
 }
 
 
-export default UserList;
+export default React.memo(UserList);
