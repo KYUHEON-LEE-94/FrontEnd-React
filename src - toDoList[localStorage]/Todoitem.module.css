@@ -1,0 +1,33 @@
+.todo {
+    margin: 10px 80px;
+
+}
+
+.checkbox {
+    width: 30px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.text {
+    font-size: 1.2rem;
+    margin-left: 30px;
+}
+
+.text:hover {
+    color: var(--color-accent);
+}
+
+.icon {
+    display: inline-block;
+    border-radius: 50%;
+    margin-left: 40px;
+}
+
+.button {
+    margin: auto;
+}
+
+.button:hover {
+    background-color: yellowgreen;
+}
