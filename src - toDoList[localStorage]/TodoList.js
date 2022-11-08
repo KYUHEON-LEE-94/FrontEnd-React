@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AddTodo from './AddTodo';
 import Todoitem from './Todoitem';
 import styles from './TodoList.module.css';
 
+
+
+//LocalStorage에 저장한 정보를 불러오기 위한 function
+const getLocalStorageTodos = () => {
+  const todos = localStorage.getItem('todos')
+  return todos ? JSON.parse(todos) : []
+}
+
 export default function TodoList({ filter }) {
-  const [todos, settodos] = useState([
-    { id: '1', text: '강아지 산책', status: 'active' },
-    { id: '2', text: 'js 공부', status: 'active' }
-  ]);
+  const [todos, settodos] = useState(() => getLocalStorageTodos());
+
   const handleAdd = (todo) => {
     settodos([...todos, todo]);
 
@@ -22,8 +28,16 @@ export default function TodoList({ filter }) {
   }
 
   const filtered = getFilterItem(todos, filter)
+
+  //LocalStorage를 로딩시에 한번 불러오기 위한 useEffect
+  // -> todos가 바뀔때마다!
+  useEffect(() => {
+    localStorage.setItem('todos', JSON.stringify(todos))
+  }, [todos])
+
+
   return (
-    <div>
+    <>
       <section className={styles.container}>
         <ul className={styles.list}>
           {
@@ -39,7 +53,7 @@ export default function TodoList({ filter }) {
         </ul>
         <AddTodo onAdd={handleAdd} />
       </section>
-    </div>
+    </>
   )
 }
 
@@ -49,3 +63,4 @@ const getFilterItem = (todos, filter) => {
   }
   return todos.filter(todo => todo.status === filter)
 }
+

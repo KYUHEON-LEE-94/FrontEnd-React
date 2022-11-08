@@ -10,14 +10,16 @@ export default function Todoitem({ todo, onUpdate, onDelete }) {
 
   }
   return (
-    <div>
+    <>
       <li className={styles.todo}>
         <input className={styles.checkbox}
           type="checkbox"
-          id="check"
+          id={todo.id}
           checked={status === 'completed'}
           onChange={handleChecked} />
-        <label className={styles.text} htmlFor="check" >{text}</label>
+
+        <label className={styles.text} htmlFor={todo.id} >{text}</label>
+
         {/* onClick={onDelete(todo.id)}는 미리 이 함수를 실행해버림 */}
         <span className={styles.icon}>
           <button className={styles.button}
@@ -27,6 +29,6 @@ export default function Todoitem({ todo, onUpdate, onDelete }) {
         </span>
 
       </li>
-    </div>
+    </>
   )
 }
