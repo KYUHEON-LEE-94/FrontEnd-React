@@ -1,0 +1,86 @@
+.App {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+}
+
+p {
+  margin: 0;
+}
+
+.ReviewEditor {
+  border: 1px solid gray;
+  text-align: center;
+  padding: 20px;
+}
+
+.ReviewEditor input,
+textarea {
+  margin-bottom: 20px;
+  width: 95%;
+}
+
+.ReviewEditor input {
+  padding: 10px;
+}
+
+.ReviewEditor textarea {
+  padding: 10px;
+  height: 150px;
+}
+
+.ReviewEditor select {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.ReviewEditor button {
+  width: 80%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* List  */
+
+.ReviewList {
+  border: 1px solid gray;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.ReviewList h2 {
+  text-align: center;
+}
+
+/* ITEM */
+
+.ReviewItem {
+  background-color: rgb(240, 240, 240);
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.ReviewItem span {
+  margin-right: 10px;
+}
+
+.ReviewItem .info {
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.ReviewItem .date {
+  color: gray;
+}
+
+.ReviewItem .content {
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.ReviewItem textarea {
+  padding: 10px;
+}
